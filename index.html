@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effective Prompting Guide</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #24a9e1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            max-width: 800px;
+            width: 100%;
+        }
+        .hidden {
+            display: none;
+        }
+        .custom-orange {
+            color: #f8931d;
+        }
+        .btn-orange {
+            background-color: #f8931d;
+        }
+        .btn-orange:hover {
+            background-color: #e07d0e;
+        }
+        .substack-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .substack-link a {
+            color: #f8931d;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-3xl font-bold mb-6 text-center custom-orange">Effective 3 Steps Prompting Guide</h1>
+        
+        <div id="intro" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 custom-orange">Introduction</h2>
+            <p class="mb-4">Welcome to the Effective Prompting Guide! This interactive presentation will teach you how to create better prompts for AI assistants.&nbsp; &nbsp;Let's start with some key principles.</p>
+            <button id="startLessons" class="btn-orange text-white px-4 py-2 rounded hover:opacity-90">Start Lessons</button>
+        </div>
+
+        <div id="lessons" class="hidden">
+            <div id="lesson1" class="mb-8">
+                <h2 class="text-2xl font-semibold mb-4 custom-orange">Lesson 1: Be Clear and Specific</h2>
+                <p class="mb-4">When crafting prompts, it's crucial to be clear and specific about your task or question. This helps the AI understand your needs better.</p>
+                <div class="mb-4">
+                    <h3 class="font-semibold custom-orange">Example:</h3>
+                    <p class="bg-gray-100 p-2 rounded">Bad: "Help me with a presentation."</p>
+                    <p class="bg-gray-100 p-2 rounded mt-2">Good: "I need help creating a 10-slide presentation for our quarterly sales meeting. The presentation should cover our Q2 sales performance, top-selling products, and sales targets for Q3. Please provide an outline with key points for each slide."</p>
+                </div>
+                <button class="btn-orange text-white px-4 py-2 rounded hover:opacity-90 nextLesson">Next Lesson</button>
+            </div>
+
+            <div id="lesson2" class="mb-8 hidden">
+                <h2 class="text-2xl font-semibold mb-4 custom-orange">Lesson 2: Use Examples</h2>
+                <p class="mb-4">Providing examples of the kind of output you're looking for can greatly improve the AI's understanding of your needs.</p>
+                <div class="mb-4">
+                    <h3 class="font-semibold custom-orange">Example:</h3>
+                    <p class="bg-gray-100 p-2 rounded">Bad: "Write a professional email."</p>
+                    <p class="bg-gray-100 p-2 rounded mt-2">Good: "I need to write a professional email to a client about a project delay. Here's a similar email I've sent before: [Include example email]"</p>
+                </div>
+                <button class="btn-orange text-white px-4 py-2 rounded hover:opacity-90 nextLesson">Next Lesson</button>
+            </div>
+
+            <div id="lesson3" class="mb-8 hidden">
+                <h2 class="text-2xl font-semibold mb-4 custom-orange">Lesson 3: Encourage Thinking</h2>
+                <p class="mb-4">For complex tasks, asking the AI to "think step-by-step" or "explain your reasoning" can lead to more accurate and detailed responses.</p>
+                <div class="mb-4">
+                    <h3 class="font-semibold custom-orange">Example:</h3>
+                    <p class="bg-gray-100 p-2 rounded">Bad: "How can I improve team productivity?"</p>
+                    <p class="bg-gray-100 p-2 rounded mt-2">Good: "I'm looking to improve my team's productivity. Think through this step-by-step, considering factors like current productivity blockers, potential solutions, implementation challenges, and methods to measure improvement. For each step, please provide a brief explanation of your reasoning."</p>
+                </div>
+                <button class="btn-orange text-white px-4 py-2 rounded hover:opacity-90" id="startQuiz">Start Quiz</button>
+            </div>
+        </div>
+
+        <div id="quiz" class="hidden">
+            <div id="question1" class="mb-8">
+                <h2 class="text-2xl font-semibold mb-4 custom-orange">Question 1:</h2>
+                <p class="mb-4">What is one of the key principles for effective prompting?</p>
+                <div class="space-y-2">
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="a" class="mr-2">
+                        <span>A) Use vague and general language</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="b" class="mr-2">
+                        <span>B) Be clear and specific</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="q1" value="c" class="mr-2">
+                        <span>C) Always use technical jargon</span>
+                    </label>
+                </div>
+                <button class="btn-orange text-white px-4 py-2 rounded hover:opacity-90 mt-4 nextQuestion">Next Question</button>
+            </div>
+
+            <div id="question2" class="mb-8 hidden">
+                <h2 class="text-2xl font-semibold mb-4 custom-orange">Question 2:</h2>
+                <p class="mb-4">When asking AI assistant to analyze a document, what should you do?</p>
+                <div class="space-y-2">
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="a" class="mr-2">
+                        <span>A) Assume AI assistant remembers previous conversations</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="b" class="mr-2">
+                        <span>B) Provide vague instructions</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="q2" value="c" class="mr-2">
+                        <span>C) Refer to the document by name and ask for specific citations</span>
+                    </label>
+                </div>
+                <button class="btn-orange text-white px-4 py-2 rounded hover:opacity-90 mt-4 nextQuestion">Next Question</button>
+            </div>
+
+            <div id="question3" class="mb-8 hidden">
+                <h2 class="text-2xl font-semibold mb-4 custom-orange">Question 3:</h2>
+                <p class="mb-4">What is a good technique for complex tasks?</p>
+                <div class="space-y-2">
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="a" class="mr-2">
+                        <span>A) Ask AI assistant to "think step-by-step"</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="b" class="mr-2">
+                        <span>B) Provide as little context as possible</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="q3" value="c" class="mr-2">
+                        <span>C) Avoid asking for explanations</span>
+                    </label>
+                </div>
+                <button id="submit" class="btn-orange text-white px-4 py-2 rounded hover:opacity-90 mt-4">Submit Answers</button>
+            </div>
+        </div>
+
+        <div id="results" class="hidden mt-8">
+            <h2 class="text-2xl font-bold mb-4 custom-orange">Quiz Results</h2>
+            <p id="score" class="text-lg mb-4"></p>
+            <div id="feedback" class="space-y-4"></div>
+            <button id="retry" class="btn-orange text-white px-4 py-2 rounded hover:opacity-90 mt-4">Retry Quiz</button>
+        </div>
+
+        <div class="substack-link">
+            <a href="https://mlearning.substack.com" target="_blank" rel="noopener noreferrer">Visit mlearning.substack.com</a>
+        </div>
+    </div>
+
+    <script>
+        const correctAnswers = {
+            q1: 'b',
+            q2: 'c',
+            q3: 'a'
+        };
+
+        const feedback = {
+            q1: {
+                correct: "Correct! Being clear and specific is crucial for effective prompting.",
+                incorrect: "Incorrect. Being clear and specific is crucial for effective prompting, not using vague language or unnecessary jargon."
+            },
+            q2: {
+                correct: "Correct! Referring to the document by name and asking for specific citations helps AI assistant provide more accurate and relevant information.",
+                incorrect: "Incorrect. It's important to refer to the document by name and ask for specific citations. AI assistant doesn't remember previous conversations, and vague instructions lead to less useful responses."
+            },
+            q3: {
+                correct: "Correct! Asking AI assistant to 'think step-by-step' can lead to more detailed and accurate responses for complex tasks.",
+                incorrect: "Incorrect. Asking AI assistant to 'think step-by-step' is a good technique for complex tasks. Providing context and asking for explanations are also helpful."
+            }
+        };
+
+        document.getElementById('startLessons').addEventListener('click', function() {
+            document.getElementById('intro').classList.add('hidden');
+            document.getElementById('lessons').classList.remove('hidden');
+        });
+
+        document.querySelectorAll('.nextLesson').forEach(button => {
+            button.addEventListener('click', function() {
+                const currentLesson = this.closest('div[id^="lesson"]');
+                const nextLesson = currentLesson.nextElementSibling;
+                currentLesson.classList.add('hidden');
+                nextLesson.classList.remove('hidden');
+            });
+        });
+
+        document.getElementById('startQuiz').addEventListener('click', function() {
+            document.getElementById('lessons').classList.add('hidden');
+            document.getElementById('quiz').classList.remove('hidden');
+        });
+
+        document.querySelectorAll('.nextQuestion').forEach(button => {
+            button.addEventListener('click', function() {
+                const currentQuestion = this.closest('div[id^="question"]');
+                const nextQuestion = currentQuestion.nextElementSibling;
+                currentQuestion.classList.add('hidden');
+                nextQuestion.classList.remove('hidden');
+            });
+        });
+
+        document.getElementById('submit').addEventListener('click', function() {
+            let score = 0;
+            let feedbackHtml = '';
+
+            for (let i = 1; i <= 3; i++) {
+                const question = `q${i}`;
+                const selectedAnswer = document.querySelector(`input[name="${question}"]:checked`);
+
+                if (selectedAnswer) {
+                    if (selectedAnswer.value === correctAnswers[question]) {
+                        score++;
+                        feedbackHtml += `<p class="text-green-600">${feedback[question].correct}</p>`;
+                    } else {
+                        feedbackHtml += `<p class="text-red-600">${feedback[question].incorrect}</p>`;
+                    }
+                } else {
+                    feedbackHtml += `<p class="text-red-600">Question ${i} was not answered.</p>`;
+                }
+            }
+
+            document.getElementById('score').textContent = `Your score: ${score} out of 3`;
+            document.getElementById('feedback').innerHTML = feedbackHtml;
+            document.getElementById('quiz').classList.add('hidden');
+            document.getElementById('results').classList.remove('hidden');
+        });
+
+        document.getElementById('retry').addEventListener('click', function() {
+            document.getElementById('quiz').classList.remove('hidden');
+            document.getElementById('results').classList.add('hidden');
+            document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+            document.getElementById('question1').classList.remove('hidden');
+            document.getElementById('question2').classList.add('hidden');
+            document.getElementById('question3').classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
